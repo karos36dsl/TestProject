@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "alminka";
+}
+
+<div class="jumbotron">
+    <h1>Администратор Сайта</h1>
+    <p class="lead">Управление Сайтом</p>
+    <p><a href="/Home/AllNumbers/" class="btn btn-primary btn-lg">Перейти к списку номеров &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Управление Списком Номеров</h2>
+        <p>
+            Добавление новых номеров и удаление.
+        </p>
+        <p><a class="btn btn-default" href="/Admin/AdminNumber/">Список всех номеро &raquo;</a></p>
+        <p><a class="btn btn-default" href="/Admin/AddNumber/">Добавить новый номер &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Список всех занятых номеров</h2>
+        <p> Отображение всех номеров в которых уже проживают посетители.</p>
+        <p><a class="btn btn-default" href="/Admin/AllOrderNumbers/">Перейти к списку &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Список всех  пользователей</h2>
+        <p>Отображение всех зарегистрированных пользователей.</p>
+        <p><a class="btn btn-default" href="/Admin/AllUsers/">Перейти к списку &raquo;</a></p>
+    </div>
+</div>

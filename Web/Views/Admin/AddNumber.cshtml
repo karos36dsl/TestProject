@@ -1,0 +1,39 @@
+﻿@model Web.Models.Number
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Оформление</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <h3>Заполните все поля формы</h3>
+    <div>
+        <p>Добавьте Новый Номер </p>
+        <p><a href="/Admin/Admin/">Вернуться к странице администрирования</a></p>
+
+   
+        @using (Html.BeginForm())
+        {
+
+            @Html.ValidationSummary()
+           
+            <p>Количество комнат : @Html.TextBoxFor(x => x.QuantityRooms)</p>
+            <p>Тип Номера : @Html.TextBoxFor(x => x.TypeRoom)</p>
+            <p>Статус : @Html.TextBoxFor(x => x.Status)</p>
+            <p>Цена за сутки : @Html.TextBoxFor(x => x.Price)</p>
+            
+
+
+            <input type="submit" value="Добавить в список номеров" />
+        }
+    </div>
+</body>
+</html>

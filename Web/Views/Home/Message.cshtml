@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Message</title>
+</head>
+<body>
+    <div>
+        <p> Спасибо , Ваш номер готов к заселению @ViewBag.id !</p>
+        <p><a href="/Home/Index/">Вернуться на главную</a></p>
+        <p><a href="/Home/LiveNumber/">Перейти к управлению Номером</a></p>
+    </div>
+</body>
+</html>

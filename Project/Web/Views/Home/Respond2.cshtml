@@ -1,0 +1,36 @@
+﻿
+@model Web.Models.Respond
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ваш Отклик</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <h3>Заполните все поля формы</h3>
+    <div>
+        <p>Оставьте информацию о себе </p>
+        <p><a href="/Home/Index/">Вернуться к списку вакансий</a></p>
+        @Html.Hidden("AnnonId",ViewBag.AnnonId as string)
+        @using (Html.BeginForm())
+        {
+
+            @Html.ValidationSummary()
+        
+            <p>Ваше Имя : @Html.TextBoxFor(x => x.Name)</p>
+            <p>Номер Вашего Иелефона : @Html.TextBoxFor(x => x.MyNomberPhone)</p>
+            <p>Напишите О Себе : @Html.TextBoxFor(x => x.AboutMe)</p>
+
+            <input type="submit" value="Оставить Отклик" />
+        }
+    </div>
+</body>
+</html>

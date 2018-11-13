@@ -1,0 +1,41 @@
+﻿
+@model Web.Models.OrderNumber
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Оформление</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <h3>Заполните все поля формы</h3>
+    <div>
+        <p>Оставьте информацию о себе </p>
+        <p><a href="/Home/Index/">Вернуться к списку номеров</a></p>
+
+        @Html.Hidden("NumberId", ViewBag.NumberId as string)
+        @using (Html.BeginForm())
+        {
+
+            @Html.ValidationSummary()
+            <input type="hidden" value="@ViewBag.NumberId" name="NumberId" />
+            <input type="hidden" value="@ViewBag.UserId" name="UserId" />
+            <p>Ваше Имя : @Html.TextBoxFor(x => x.FirstName)</p>
+            <p>Ваша Фамилия : @Html.TextBoxFor(x => x.LastName)</p>
+            <p>Ваше Отчество : @Html.TextBoxFor(x => x.MiddleName)</p>
+            <p>Дата Въезда в формате ДД.MM.ГГ : @Html.TextBoxFor(x => x.BeginDate)</p>
+            <p>Дата Выезда в формате ДД.MM.ГГ : @Html.TextBoxFor(x => x.EndDate)</p>
+
+
+            <input type="submit" value="Заселиться в номер" />
+        }
+    </div>
+</body>
+</html>

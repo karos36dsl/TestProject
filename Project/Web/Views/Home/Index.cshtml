@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Доска Объявлений </title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div>
+        <p><a href="/AddAnnon/AddAnnon2/">Добавить Вакансию</a></p>
+        <p><a href="/Search/Index/">Поиск по вакансиям</a></p>
+        <h3>Список Вакансий </h3>
+
+        @foreach (var b in ViewBag.Annons)
+        {
+
+            <p> Название : @b.Name</p>
+            <p> Оклад : @b.Price</p>
+            <p> Описание : @b.Description</p>
+            <p> Организация : @b.Organisation</p>
+            <p> Контактное Лицо : @b.ContactFace</p>
+            <p> Номер Телефона : @b.NumberPhone</p>
+            <p>Тип Занятости :  @b.Type</p>
+            <p><a href="/Home/Respond2/@b.AnnonId">Откликнуться</a></p>
+            <hr />
+        }
+
+        </div>
+</body>
+</html>

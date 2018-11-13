@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Отклик на вакансию</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <h3>Заполните все поля</h3>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.AnnonId" name="AnnonId" />
+            <table>
+                <tr>
+                    <td><p>Введите свое имя </p></td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите номер вашего телефона :</p></td>
+                    <td>
+                        <input type="text" name="MyNomberPhone" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>О Себе </p></td>
+                    <td><input type="text" name="AboutMe" /> </td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добавьте свою вакансию</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <h3>Добавьте свою вакансию заполнив все поля формы </h3>
+        <p><a href="/Home/Index/">Вернуться к списку вакансий</a></p>
+        <form method="post" action="">
+            <input type="hidden" value="@ViewBag.AnnonId" name="AnnonId" />
+            <table>
+                <tr>
+                    <td><p>Введите Название Вакансии </p></td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите Сумму Оклада :</p></td>
+                    <td>
+                        <input type="text" name="Price" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Опишите Вакансию </p></td>
+                    <td><input type="text" name="Description" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите Название организации </p></td>
+                    <td><input type="text" name="Organisation" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Введите Ваше имя :</p></td>
+                    <td>
+                        <input type="text" name="ContactFace" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Введите Номер вашего телефона </p></td>
+                    <td><input type="text" name="NumberPhone" /> </td>
+                </tr>
+                <tr>
+                    <td><p>Укажите тип занятости </p></td>
+                    <td><input type="text" name="Type" /> </td>
+                </tr>
+                <tr><td><input type="submit" value="Добавить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

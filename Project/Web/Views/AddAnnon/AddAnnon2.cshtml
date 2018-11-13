@@ -1,0 +1,35 @@
+﻿@model Web.Models.Annon
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добавление вакансии</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <h3>Заполните все поля формы</h3>
+    <div>
+        <p>Добавьте свою вакансию заполнив все поля формы </p>
+        <p><a href="/Home/Index/">Вернуться к списку вакансий</a></p>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <p>Название Вакансии : @Html.TextBoxFor(x => x.Name)</p>
+            <p>Сумма Оклада : @Html.TextBoxFor(x => x.Price)</p>
+            <p>Описание Вакансии : @Html.TextAreaFor(x => x.Description)</p>
+            <p>Название Организации : @Html.TextBoxFor(x => x.Organisation)</p>
+            <p>Ваше Имя : @Html.TextBoxFor(x => x.ContactFace)</p>
+            <p>Ваш Номер Телефона : @Html.TextBoxFor(x => x.NumberPhone)</p>
+            <p>Тип Занятости : @Html.TextBoxFor(x => x.Type)</p>
+            <input type="submit" value="Добавить Объявление" />
+        }
+    </div>
+</body>
+</html>

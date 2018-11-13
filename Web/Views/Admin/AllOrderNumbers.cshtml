@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "LiveNumber";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Сайт Отеля </title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div>
+
+        <p><a href="/Admin/Admin/">Вернуться к странице администратора</a></p>
+       
+
+        <h3>Информация о всех проживающих </h3>
+
+        @foreach (var b in ViewBag.OrderNumbers)
+        {
+
+            <p> имя   : @b.FirstName</p>
+            <p> фамилия   : @b.LastName</p>
+            <p> отчество   : @b.MiddleName</p>
+            <p> дата заезда   : @b.BeginDate</p>
+            <p> дата выезда   : @b.EndDate</p>
+
+            <p><a href="/Admin/EndLiveNumber/@b.OrderNumberId">Выселить и удалить</a></p>
+            <hr />
+        }
+
+
+    </div>
+</body>
+</html>

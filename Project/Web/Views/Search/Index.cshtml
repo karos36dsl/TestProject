@@ -1,0 +1,34 @@
+﻿@using Web.Models
+@model IEnumerable<Annon>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Поиск по Вакансиям</h2>
+<p><a href="/Home/Index/">Вернуться к списку вакансий</a></p>
+<div>
+    @using (Html.BeginForm())
+    {
+        <p>Найдите Вакансию по названию должности или окладу</p>
+        <p>Название вакансии : @Html.TextBox("Name")</p>
+        <p>Оклад : @Html.TextBox("Price")</p>
+        <input type="submit" value="Найти Вакансию" />
+    }
+</div>
+@if (Model != null && Model.Any())
+{
+    <h3>Результат поиска </h3>
+    foreach (Annon annon in Model)
+    {
+        <p> Название : @annon.Name</p>
+        <p> Оклад : @annon.Price</p>
+        <p> Описание : @annon.Description</p>
+        <p> Организация : @annon.Organisation</p>
+        <p> Контактное Лицо : @annon.ContactFace</p>
+        <p> Номер Телефона : @annon.NumberPhone</p>
+        <p>Тип Занятости :  @annon.Type</p>
+        <p><a href="/Home/Respond2/@annon.AnnonId">Откликнуться</a></p>
+        <hr />
+    }
+}

@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Сайт Отеля </title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div>
+
+
+        <p><a href="/Admin/Admin/"> <= Вернуться к странице администрирования </a></p>
+
+        <h3>Список Номеров </h3>
+
+        @foreach (var b in ViewBag.Numbers)
+        {
+
+            <p> Кол-во Комнат   : @b.QuantityRooms</p>
+            <p> Тип Номера   : @b.TypeRoom</p>
+            <p> Статус   : @b.Status</p>
+            <p> Цена за сутки   : @b.Price</p>
+
+            
+            <p><a href="/DeleteNumb/Delete/@b.NumberId">Удалить Номер</a></p>
+            <hr />
+        }
+
+    </div>
+</body>
+</html>

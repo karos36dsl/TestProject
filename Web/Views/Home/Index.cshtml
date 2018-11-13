@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Сайт Отеля</h1>
+    <p class="lead">На этом сайте вы можете выбрать себе номер в режиме онлайн</p>
+    <p><a href="/Home/AllNumbers/" class="btn btn-primary btn-lg">Перейти к списку номеров &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Управление Номером</h2>
+        <p>
+            В этом разделе вы можете посмотреть всю информацию о выбранном номере ,а так же дату заселения и выезда.
+        </p>
+        <p><a class="btn btn-default" href="/Home/LiveNumber/">Перейти к управлению &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Поиск по всем номерам отеля</h2>
+        <p>В этом разделе вы можете искать номера по выбранным вами критериям.</p>
+        <p><a class="btn btn-default" href="/Search/Index/">Перейти к поиску &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Управление сайтом</h2>
+        <p>Этот раздел для Администратора Сайта.</p>
+        <p><a class="btn btn-default" href="/Admin/Admin/">Перейти к администрированию &raquo;</a></p>
+    </div>
+</div>

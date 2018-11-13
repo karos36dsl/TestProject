@@ -1,0 +1,36 @@
+﻿
+@using Web.Models
+@model IEnumerable<Number>
+@{
+    ViewBag.Title = "Поиск Номеров";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p><a href="/Home/Index/"> <= Вернуться к списку номеров </a></p>
+<h2>Поиск Номеров</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <p>Найдите номер по вашим критериям</p>
+        <p>Количество Комтан   : @Html.TextBox("quantityRooms")</p>
+        <p>Тип Номера   : @Html.TextBox("typeRoom")</p>
+        <p>Цена за сутки   : @Html.TextBox("price")</p>
+
+        <input type="submit" value="Начать Поиск " />
+    }
+</div>
+@if (Model != null && Model.Any())
+{
+    <p>Результат Поиска</p>
+    foreach (Number number in Model)
+    {
+        <p> Кол-во Комнат   : @number.QuantityRooms</p>
+        <p> Тип Номера   : @number.TypeRoom</p>
+        <p> Статус   : @number.Status</p>
+        <p> Цена за сутки   : @number.Price</p>
+
+        <p><a href="/Home/OrderNumber/@number.NumberId">Заселение</a></p>
+        <hr />
+    }
+}

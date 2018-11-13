@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Сайт Отеля </title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div>
+
+
+        <p><a href="/Admin/Admin/"> <= Вернуться к странице администрирования </a></p>
+
+        <h3>Список Всех зарегистрированных пользователей </h3>
+
+        @foreach (var b in ViewBag.Users )
+        {
+
+            <p> Имя   : @b.FirstName</p>
+            <p> Фамилия   : @b.LastName</p>
+            <p> Отчество   : @b.MiddleName</p>
+            
+
+            
+            <hr />
+        }
+
+    </div>
+</body>
+</html>
